@@ -27,7 +27,7 @@ public class SeeDeathLocationsModule : EverestModule {
 
     public override void Load() {
         Logger.SetLogLevel(nameof(SeeDeathLocationsModule), LogLevel.Verbose);
-        Logger.Log(LogLevel.Info, "SeeDeathLocationsModule", "Loading hooks.");
+        Logger.Log(LogLevel.Info, nameof(SeeDeathLocationsModule), "Loading hooks.");
         Hooks.Load();
     }
 

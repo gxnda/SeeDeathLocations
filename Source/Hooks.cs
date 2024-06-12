@@ -20,11 +20,11 @@ namespace Celeste.Mod.SeeDeathLocations {
         }
 
         private static void SaveDeathPosition(Player self) {
-            Logger.Log(nameof(SeeDeathLocations), "Has not been created yet!");
+            Logger.Log(nameof(SeeDeathLocationsModule), "Has not been created yet!");
         }
 
         private static void DisplayDeathPosition(Player self) {
-            Logger.Log(nameof(SeeDeathLocations), $"Death at: {self.Position}");
+            Logger.Log(nameof(SeeDeathLocationsModule), $"Death at: {self.Position}");
         }
     }
 }
