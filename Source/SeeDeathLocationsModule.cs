@@ -31,7 +31,8 @@ namespace Celeste.Mod.SeeDeathLocations {
         }
 
         public override void Unload() {
-            // TODO: unapply any hooks applied in Load()
+            Logger.Log(LogLevel.Info, nameof(SeeDeathLocationsModule), "Unloading hooks.");
+            Hooks.Unload();
         }
 
         public static void SaveAndDisplayCoordinatesThenDie() {
