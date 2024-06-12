@@ -24,7 +24,7 @@ namespace Celeste.Mod.SeeDeathLocations {
         }
 
         private static void DisplayDeathPosition(Player self) {
-            Logger.Log(nameof(SeeDeathLocationsModule), $"Death at: {self.Position}");
+            Logger.Log(LogLevel.Info, nameof(SeeDeathLocationsModule), $"Death at: {self.Position}");
         }
     }
 }
