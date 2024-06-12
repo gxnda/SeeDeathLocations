@@ -6,8 +6,7 @@ namespace Celeste.Mod.SeeDeathLocations {
             On.Celeste.Player.Die += ModSaveAndDisplayDeathPosition;
         }
 
-        private static PlayerDeadBody ModSaveAndDisplayDeathPosition(
-            On.Celeste.Player.orig_Die orig,
+        private static PlayerDeadBody ModSaveAndDisplayDeathPosition(On.Celeste.Player.orig_Die orig,
             Player self,
             Vector2 direction,
             bool evenIfInvincible = false,
