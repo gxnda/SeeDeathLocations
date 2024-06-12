@@ -3,17 +3,6 @@
 namespace Celeste.Mod.SeeDeathLocations;
 
 public class SeeDeathLocationsModule : EverestModule {
-    public static SeeDeathLocationsModule Instance { get; private set; }
-
-    public override Type SettingsType => typeof(SeeDeathLocationsModuleSettings);
-    public static SeeDeathLocationsModuleSettings Settings => (SeeDeathLocationsModuleSettings) Instance._Settings;
-
-    public override Type SessionType => typeof(SeeDeathLocationsModuleSession);
-    public static SeeDeathLocationsModuleSession Session => (SeeDeathLocationsModuleSession) Instance._Session;
-
-    public override Type SaveDataType => typeof(SeeDeathLocationsModuleSaveData);
-    public static SeeDeathLocationsModuleSaveData SaveData => (SeeDeathLocationsModuleSaveData) Instance._SaveData;
-
     public SeeDeathLocationsModule() {
         Instance = this;
 #if DEBUG
@@ -25,11 +14,27 @@ public class SeeDeathLocationsModule : EverestModule {
 #endif
     }
 
+    public static SeeDeathLocationsModule Instance { get; private set; }
+
+    public override Type SettingsType => typeof(SeeDeathLocationsModuleSettings);
+    public static SeeDeathLocationsModuleSettings Settings => (SeeDeathLocationsModuleSettings)Instance._Settings;
+
+    public override Type SessionType => typeof(SeeDeathLocationsModuleSession);
+    public static SeeDeathLocationsModuleSession Session => (SeeDeathLocationsModuleSession)Instance._Session;
+
+    public override Type SaveDataType => typeof(SeeDeathLocationsModuleSaveData);
+    public static SeeDeathLocationsModuleSaveData SaveData => (SeeDeathLocationsModuleSaveData)Instance._SaveData;
+
     public override void Load() {
-        // TODO: apply any hooks that should always be active
+        Logger.SetLogLevel(nameof(SeeDeathLocationsModule), LogLevel.Verbose);
+        Logger.Log(LogLevel.Info, "SeeDeathLocationsModule", "Loading hooks.");
+        Hooks.Load();
     }
 
     public override void Unload() {
         // TODO: unapply any hooks applied in Load()
+    }
+
+    public static void SaveAndDisplayCoordinatesThenDie() {
     }
 }
