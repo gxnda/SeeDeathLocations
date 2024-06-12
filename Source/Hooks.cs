@@ -15,6 +15,7 @@ namespace Celeste.Mod.SeeDeathLocations {
         ) {
             DisplayDeathPosition(self);
             SaveDeathPosition(self);
+
             // Do original behaviour afterwards
             return orig(self, direction, evenIfInvincible, registerDeathInStats);
         }
