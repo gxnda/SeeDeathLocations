@@ -16,26 +16,25 @@ namespace Celeste.Mod.SeeDeathLocations {
             return orig(self, direction, evenIfInvincible, registerDeathInStats);
         }
 
-        private static Tuple<string, Vector2> GetDeathPosition(Player self) {
+        private static DeathPosition GetDeathPosition(Player self) {
             string chapterId = self.level.Session.Area.SID;
             Vector2 position = self.Position;
-            return new Tuple<string, Vector2>(chapterId, position);
+            return new DeathPosition(chapterId, position);
 
         }
 
         private static void SaveDeathPosition(Player self) {
-            Tuple<string, Vector2> deathPosition = GetDeathPosition(self);
-            string chapterId = deathPosition.Item1;
-            Vector2 position = deathPosition.Item2;
-
+            DeathPosition deathPosition = GetDeathPosition(self);
+            // Save to save data
 
         }
 
         private static void DisplayDeathPosition(Player self) {
-            Tuple<string, Vector2> deathPosition = GetDeathPosition(self);
-            string chapterId = deathPosition.Item1;
-            Vector2 position = deathPosition.Item2;
-            Logger.Log(LogLevel.Info, nameof(SeeDeathLocationsModule), $"Death at: {position}, in chapter: {chapterId}");
+            DeathPosition deathPosition = GetDeathPosition(self);
+
+            Logger.Log(LogLevel.Info, nameof(SeeDeathLocationsModule), $"{deathPosition}");
+
+            // TODO: Display the death position on screen.
         }
     }
 }
