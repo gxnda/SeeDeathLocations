@@ -1,5 +1,7 @@
 # SeeDeathLocations
-A mod for Celeste which lets you see everywhere that you've died on a screen when you die - similar to super mario maker.
+A mod for Celeste which lets you see everywhere that you've died on a screen when you die - similar to super mario maker. 
+
+### **NOT COMPLETE YET, DO NOT USE!!**
 
 ## TODO
 - [X] Get player coordinates on death
