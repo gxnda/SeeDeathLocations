@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.Xna.Framework;
 
 namespace Celeste.Mod.SeeDeathLocations {
     public class SeeDeathLocationsModule : EverestModule {
@@ -35,7 +36,6 @@ namespace Celeste.Mod.SeeDeathLocations {
             Hooks.Unload();
         }
 
-        public static void SaveAndDisplayCoordinatesThenDie() {
-        }
+
     }
 }
