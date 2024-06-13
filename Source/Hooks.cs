@@ -28,7 +28,9 @@ namespace Celeste.Mod.SeeDeathLocations {
         }
 
         private static void DisplayDeathPosition(Player self) {
-            Logger.Log(LogLevel.Info, nameof(SeeDeathLocationsModule), $"Death at: {self.Position}");
+            int chapterId = self.level.Session.Area.ID;
+            Vector2 position = self.Position;
+            Logger.Log(LogLevel.Info, nameof(SeeDeathLocationsModule), $"Death at: {position}, in chapter: {chapterId}");
         }
     }
 }
