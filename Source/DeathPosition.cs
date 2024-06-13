@@ -11,7 +11,7 @@ namespace Celeste.Mod.SeeDeathLocations {
         }
 
         public void Log() {
-            Logger.Log(nameof(SeeDeathLocationsModule), $"Death at: {Position}, in chapter: {ChapterId}");
+            Logger.Log(nameof(SeeDeathLocations), $"Death at: {Position}, in chapter: {ChapterId}");
         }
 
     }

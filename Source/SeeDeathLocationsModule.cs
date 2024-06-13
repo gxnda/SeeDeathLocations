@@ -3,14 +3,17 @@ using Microsoft.Xna.Framework;
 
 namespace Celeste.Mod.SeeDeathLocations {
     public class SeeDeathLocationsModule : EverestModule {
+
+
         public SeeDeathLocationsModule() {
             Instance = this;
+
 #if DEBUG
             // debug builds use verbose logging
-            Logger.SetLogLevel(nameof(SeeDeathLocationsModule), LogLevel.Verbose);
+            Logger.SetLogLevel(nameof(SeeDeathLocations), LogLevel.Verbose);
 #else
             // release builds use info logging to reduce spam in log files
-            Logger.SetLogLevel(nameof(SeeDeathLocationsModule), LogLevel.Info);
+            Logger.SetLogLevel(nameof(SeeDeathLocations), LogLevel.Info);
 #endif
         }
 
@@ -26,13 +29,13 @@ namespace Celeste.Mod.SeeDeathLocations {
         public static SeeDeathLocationsModuleSaveData SaveData => (SeeDeathLocationsModuleSaveData)Instance._SaveData;
 
         public override void Load() {
-            Logger.SetLogLevel(nameof(SeeDeathLocationsModule), LogLevel.Verbose);
-            Logger.Log(LogLevel.Info, nameof(SeeDeathLocationsModule), "Loading hooks.");
+            Logger.SetLogLevel(nameof(SeeDeathLocations), LogLevel.Verbose);
+            Logger.Log(LogLevel.Info, nameof(SeeDeathLocations), "Loading hooks.");
             Hooks.Load();
         }
 
         public override void Unload() {
-            Logger.Log(LogLevel.Info, nameof(SeeDeathLocationsModule), "Unloading hooks.");
+            Logger.Log(LogLevel.Info, nameof(SeeDeathLocations), "Unloading hooks.");
             Hooks.Unload();
         }
 

@@ -1,5 +1,9 @@
-namespace Celeste.Mod.SeeDeathLocations;
+using System.Collections.Generic;
 
-public class SeeDeathLocationsModuleSaveData : EverestModuleSaveData {
+namespace Celeste.Mod.SeeDeathLocations {
+    public class SeeDeathLocationsModuleSaveData : EverestModuleSaveData {
+        public List<DeathPosition> DeathPositions { get; set; } = new List<DeathPosition>();
 
+    }
 }
+
